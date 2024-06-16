@@ -56,7 +56,7 @@ func TestUser_LogUser(t *testing.T) {
 	}
 
 	logger.InitLogger()
-	slog.Info("Starting API", slog.Time("time", timeNow), "user", user.LogUser())
+	slog.Info("Creating user", slog.Time("time", timeNow), "user", user.LogUser())
 
 	w.Close()
 	os.Stdout = originalStdout
@@ -71,7 +71,7 @@ func TestUser_LogUser(t *testing.T) {
 	payload := map[string]interface{}{
 		"time":  timeNow.Format("2006-01-02T15:04:05.999999999-07:00"),
 		"level": "INFO",
-		"msg":   "Starting API",
+		"msg":   "Creating user",
 		"user":  map[string]any{"age": 30, "name": "John", "password": "HIDDEN"},
 	}
 
